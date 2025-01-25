@@ -1,0 +1,9 @@
+﻿  Main.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 2655 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+LINK : warning LNK4199: /DELAYLOAD:Permissions.dll ignored; no imports found from Permissions.dll
+  WShopFix.vcxproj -> E:\ASEPlugins\WShopFix\x64\Ark\WShopFix.dll
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
