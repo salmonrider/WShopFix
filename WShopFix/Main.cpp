@@ -75,7 +75,7 @@ void Hook_UObject_ProcessInternal(UObject* _this, FFrame* Stack, void* const Res
 					}
 
 					if (Command) {
-						if (!Command->StartsWith("wshop.", ESearchCase::IgnoreCase)) {
+						if (!Command->StartsWith("wshop", ESearchCase::IgnoreCase)) {
 							if (!IgnoreRequests.Contains(steamId)) {
 								nlohmann::json j;
 								j["content"] = fmt::format("Player is trying to execute non-WShop commands {} ({})", steamId, Command->ToString());
