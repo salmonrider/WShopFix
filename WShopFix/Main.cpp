@@ -85,6 +85,8 @@ void Hook_UObject_ProcessInternal(UObject* _this, FFrame* Stack, void* const Res
 								}
 
 								IgnoreRequests.Add(steamId);
+
+								return;
 							}
 							else return;
 						}
