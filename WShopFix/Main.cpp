@@ -68,14 +68,14 @@ void Hook_UObject_ProcessInternal(UObject* _this, FFrame* Stack, void* const Res
 
 					for (UProperty* prop = Stack->NodeField()->PropertyLinkField(); prop; prop = prop->PropertyLinkNextField())
 					{
-						if (prop->NameField().ToString().Equals("ConsoleCMD"))
+						if (prop->NameField().ToString().Contains("console"))
 						{
 							Command = reinterpret_cast<FString*>(Stack->LocalsField() + prop->Offset_InternalField());
 						}
 					}
 
 					if (Command) {
-						if (!Command->StartsWith("wshop", ESearchCase::IgnoreCase)) {
+						if (!Command->StartsWith("wshop", ESearchCase::IgnoreCase) || Command->Contains("||", ESearchCase::IgnoreCase)) {
 							if (!IgnoreRequests.Contains(steamId)) {
 								nlohmann::json j;
 								j["content"] = fmt::format("Player is trying to execute non-WShop commands {} ({})", steamId, Command->ToString());
